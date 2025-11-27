@@ -33,11 +33,11 @@ frame1.place(x=640,y=15)
 
 
 #Bilgi ekranı frame
-frame2=tk.Frame(frame1,bg="white",width=354,height=50)
+frame2=tk.Frame(frame1,bg="white",width=354,height=50,relief="solid",borderwidth=2)
 frame2.place(x=10,y=10)
 
 #Bilgi ekranı labeli
-bilgiekranlabel=tk.Label(frame2,text="BİLGİ EKRANI",font=("Arial",30),bg="white")
+bilgiekranlabel=tk.Label(frame2,text="BİLGİ EKRANI",font=("Arial",26),bg="white")
 bilgiekranlabel.place(relx=0.5,rely=0.5,anchor="center")
 
 
@@ -46,7 +46,7 @@ bilgiekranlabel.place(relx=0.5,rely=0.5,anchor="center")
 
 
 #Dolu frame
-frame3=tk.Frame(frame1,bg="white",width=172,height=140)
+frame3=tk.Frame(frame1,bg="white",width=172,height=140,relief="solid",borderwidth=2)
 frame3.place(x=10,y=70)
 
 #Dolu labeli
@@ -54,7 +54,7 @@ dolulabel=tk.Label(frame3,bg="white",text="DOLU",font=("Arial",30))
 dolulabel.place(relx=0.5,anchor="n")
 
 #Dolu sayısı
-dolusayi=tk.Label(frame3,bg="white",text="20",font=("Ariel",40))
+dolusayi=tk.Label(frame3,bg="white",text="22",font=("Ariel",40))
 dolusayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
@@ -63,7 +63,7 @@ dolusayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
 #Boş frame
-frame4=tk.Frame(frame1,bg="white",width=172,height=140)
+frame4=tk.Frame(frame1,bg="white",width=172,height=140,relief="solid",borderwidth=2)
 frame4.place(x=192,y=70)
 
 #Boş labeli
@@ -71,7 +71,7 @@ boslabel=tk.Label(frame4,bg="white",text="BOŞ",font=("Arial",30))
 boslabel.place(relx=0.5,anchor="n")
 
 #Boş sayısı
-bossayi=tk.Label(frame4,bg="white",text="20",font=("Ariel",40))
+bossayi=tk.Label(frame4,bg="white",text="22",font=("Ariel",40))
 bossayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
@@ -82,12 +82,33 @@ bossayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
 #Doluluk frame
-frame5=tk.Frame(frame1,bg="white",width=354,height=50)
+frame5=tk.Frame(frame1,bg="white",width=354,height=50,relief="solid",borderwidth=2)
 frame5.place(x=10,y=220)
 
 #Doluluk labeli
-doluluklabel=tk.Label(frame5,text="Doluluk= %50",font=("Arial",30),bg="white")
+doluluklabel=tk.Label(frame5,text="Doluluk= %50",font=("Arial",26),bg="white")
 doluluklabel.place(relx=0.5,rely=0.5,anchor="center")
+
+
+
+
+
+#Alan durumları
+sutun=4
+satir=6
+boyut=50
+bosluk=10
+index=0
+for j in range(sutun):
+    for k in range(satir):
+        
+        alanframe=tk.Frame(frame1,bg="red",width=boyut,height=boyut,borderwidth=2,relief="solid")
+        alanframe.place(x=10+k*(boyut+bosluk),y=10+j*(boyut+bosluk)+270)
+        index=j*sutun+k
+        alanlabel=tk.Label(alanframe,text=str(index+1),font=("Arial",20),bg=alanframe["bg"])
+        alanlabel.place(relx=0.5,rely=0.5,anchor="center")
+
+
 
 
 
