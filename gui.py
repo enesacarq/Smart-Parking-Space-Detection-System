@@ -54,7 +54,7 @@ dolulabel=tk.Label(frame3,bg="white",text="DOLU",font=("Arial",30))
 dolulabel.place(relx=0.5,anchor="n")
 
 #Dolu sayısı
-dolusayi=tk.Label(frame3,bg="white",text="22",font=("Ariel",40))
+dolusayi=tk.Label(frame3,bg="white",text="12",font=("Ariel",40))
 dolusayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
@@ -71,7 +71,7 @@ boslabel=tk.Label(frame4,bg="white",text="BOŞ",font=("Arial",30))
 boslabel.place(relx=0.5,anchor="n")
 
 #Boş sayısı
-bossayi=tk.Label(frame4,bg="white",text="22",font=("Ariel",40))
+bossayi=tk.Label(frame4,bg="white",text="12",font=("Ariel",40))
 bossayi.place(relx=0.5,rely=0.90,anchor="s")
 
 
@@ -104,7 +104,7 @@ for j in range(sutun):
         
         alanframe=tk.Frame(frame1,bg="red",width=boyut,height=boyut,borderwidth=2,relief="solid")
         alanframe.place(x=10+k*(boyut+bosluk),y=10+j*(boyut+bosluk)+270)
-        index=j*sutun+k
+        index=j*satir+k
         alanlabel=tk.Label(alanframe,text=str(index+1),font=("Arial",20),bg=alanframe["bg"])
         alanlabel.place(relx=0.5,rely=0.5,anchor="center")
 
