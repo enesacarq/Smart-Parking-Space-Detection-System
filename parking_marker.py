@@ -1,5 +1,8 @@
 import cv2
 import numpy as np
+import json 
+
+
 noktalar = []  #kordinatların ilk seçimi
 son_dortgen=[] #en son işaretlenen dörtgen
 park_yerleri=[] #ParkYeri sınıfının nesnelerini tutan liste
@@ -79,3 +82,12 @@ while True:
         break
 cv2.destroyAllWindows()
 
+park_data = []
+for p in park_yerleri:
+    pts_list = p.pts.reshape(-1,2).tolist()
+    park_data.append({"park_id": p.park_id, "pts": pts_list})
+
+with open("park_yerleri.json", "w") as f:
+    json.dump(park_data, f, indent=4)
+
+print("Park yerleri JSON dosyasina kayit edildi.")
