@@ -70,7 +70,7 @@ def mouse(event, x, y, flags, params):
 
 img = cv2.imread("fotopark.png")
 cv2.namedWindow("isaret")
-cv2.setMouseCallback("isaret", mouse)
+cv2.setMouseCallback("isaret", mouse) 
 
 
 
@@ -82,6 +82,7 @@ while True:
         break
 cv2.destroyAllWindows()
 
+#Park yerlerini json formatına çevirip bir json dosyasına kayıt 
 park_data = []
 for p in park_yerleri:
     pts_list = p.pts.reshape(-1,2).tolist()
