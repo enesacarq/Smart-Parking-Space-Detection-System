@@ -67,8 +67,13 @@ def mouse(event, x, y, flags, params):
 
 
 
+#Video üzerinden tek bir frame almak
+cap = cv2.VideoCapture("otopark1.mp4")
+ret, img = cap.read()  
+img=cv2.resize(img,(1080,720))
+cap.release()
 
-img = cv2.imread("fotopark.png")
+#mouse hareket takipi
 cv2.namedWindow("isaret")
 cv2.setMouseCallback("isaret", mouse) 
 
