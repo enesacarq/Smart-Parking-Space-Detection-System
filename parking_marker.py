@@ -68,7 +68,7 @@ def mouse(event, x, y, flags, params):
 
 
 #Video üzerinden tek bir frame almak
-cap = cv2.VideoCapture("otopark1.mp4")
+cap = cv2.VideoCapture("otopark.mp4")
 ret, img = cap.read()  
 img=cv2.resize(img,(1080,720))
 cap.release()
